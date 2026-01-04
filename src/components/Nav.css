@@ -1,0 +1,126 @@
+#navbar {
+    background: #090808;
+    color: white;
+    width: 100%;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT GROUP */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* NAV LIST */
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 25px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none
+}
+
+.nav-list a,
+.nav-list a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    animation-name: hoverEffect;
+    animation-duration: 100ms;
+    color: #ccc;
+}
+
+.nav-list a:active {
+    color: #aaa;
+}
+
+@keyframes hoverEffect{
+    from {color: white;}
+    to {color: #ccc;}
+}
+
+/* USER ICON */
+#navbar-users {
+    padding: 3px;
+    border-radius: 25px;
+    background: white;
+    transition: background 0.3s ease;
+}
+
+#navbar-users:hover {
+    background: #ccc;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* ANIMATION */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+
+/* MOBILE */
+@media (max-width: 770px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #090808;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-list.show {
+        max-height: 200px;
+    }
+
+    .nav-list li {
+        margin: 15px 20px;
+    }
+}
