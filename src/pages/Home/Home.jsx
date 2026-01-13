@@ -1,9 +1,10 @@
 import "./Home.css"
-
+import {useNavigate} from "react-router-dom";
 import { useEffect, useRef } from "react";
 
 function Home(){
     const hintRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +26,8 @@ function Home(){
         }
 
         window.addEventListener("scroll", handleScroll);
+
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     return(
@@ -35,7 +38,7 @@ function Home(){
                 <p>Your AI-powered trash sorter</p>
 
                 <div className="hero-buttons">
-                    <button className="primary">About Garbot</button>
+                    <button className="primary" onClick={() => navigate("./about")}>About Garbot</button>
                     <button className="secondary">Dashboard</button>
                 </div>
             </div>
