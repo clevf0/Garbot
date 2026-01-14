@@ -16,3 +16,16 @@
     margin: 0 auto;
     line-height: 1.6;
 }
+#email:link{
+    color: #f1d5b1;
+    text-decoration: none;
+}
+#email:active{
+    color: antiquewhite;
+}
+#email:visited{
+    color: antiquewhite;
+}
+#email:hover{
+    color: antiquewhite;
+}
